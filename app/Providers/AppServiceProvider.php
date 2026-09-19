@@ -11,7 +11,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // ربط العقد (Interface) بالتنفيذ الفعلي داخل Laravel Service Container (Lab 2 OOP)
+        $this->app->bind(
+            \App\Contracts\ReportExporterInterface::class,
+            \App\Exporters\CsvReportExporter::class
+        );
     }
 
     /**
