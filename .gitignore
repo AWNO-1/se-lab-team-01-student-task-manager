@@ -4,7 +4,9 @@
 .env.production
 *.key
 *.pem
+*.sqlite
 *.sqlite-journal
+/public/build/
 
 # Dependencies & Build
 /vendor/
