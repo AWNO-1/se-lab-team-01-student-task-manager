@@ -100,3 +100,47 @@ Push إلى GitHub
        ↓
 إغلاق الـ Issue ونقلها إلى Done
 ```
+
+---
+
+## 🚀 تشغيل المشروع محلياً (Quick Start Guide)
+
+لتشغيل المشروع وتجربته محلياً على جهازك، اتبع الخطوات التالية:
+
+### 1. استنساخ المستودع
+```bash
+git clone https://github.com/AWNO-1/se-lab-team-01-student-task-manager.git
+cd se-lab-team-01-student-task-manager
+```
+
+### 2. تثبيت الحزم وإعداد البيئة
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+### 3. تهيئة قاعدة البيانات وبذر البيانات التجريبية
+```bash
+# إنشاء ملف قاعدة بيانات SQLite
+touch database/database.sqlite
+
+# ترحيل الجداول وبذر البيانات الأولية
+php artisan migrate:fresh --seed
+```
+
+### 4. تشغيل الاختبارات الآلية (Pest Tests)
+```bash
+# تشغيل كامل جناح الاختبارات
+php artisan test
+
+# تشغيل اختبار ميزة إدارة المهام فقط
+php artisan test tests/Feature/TaskManagementTest.php
+```
+
+### 5. تشغيل خادم التطوير المحلي
+```bash
+php artisan serve
+```
+ثم توجه عبر المتصفح إلى: `http://127.0.0.1:8000/tasks`.
+
