@@ -55,5 +55,61 @@
 
 ---
 
-### النتيجة الإجمالية: 100 / 100 ✅
+### النتيجة الإجمالية للمحاضرة الأولى: 100 / 100 ✅
 جميع معايير ومتطلبات المحاضرة الأولى مستوفاة بدقة وتطابق كامل.
+
+---
+
+## 🎓 قائمة التحقق للمحاضرة الثانية: تطبيق نمط MVC وميزة CRUD الكاملة (Lab 2)
+
+### 1. قاعدة البيانات والنموذج (Database & Eloquent Model)
+- [x] إنشاء ملف الـ Migration لجدول `tasks` وحقوله (`id`, `title`, `description`, `is_completed`, `timestamps`).
+- [x] تنفيذ الـ Migration بنجاح عبر `php artisan migrate`.
+- [x] إعداد النموذج `Task` وتفعيل سمة `HasFactory`.
+- [x] حماية الإسناد الجماعي بتعريف `$fillable = ['title', 'description', 'is_completed']`.
+
+### 2. المسارات والربط التلقائي (Routes & Route Model Binding)
+- [x] تعريف مسارات الموارد القياسية لـ `tasks` (Index, Create, Store, Show, Edit, Update, Destroy).
+- [x] تسمية جميع المسارات (`tasks.index`, `tasks.store`, etc.).
+- [x] استخدام ربط النماذج التلقائي (Implicit Route Model Binding) لمعالجة حالة الحافة لخطأ 404 تلقائياً.
+- [x] التحقق من صحة وجاهزية المسارات عبر `php artisan route:list`.
+
+### 3. التحقق المنفصل والمتحكم (Form Requests & Controller)
+- [x] تطبيق مبدأ فصل الاهتمامات عبر `StoreTaskRequest` و `UpdateTaskRequest`.
+- [x] صياغة رسائل وقواعد تحقق تغطي حالات الحافة (الحقول الفارغة، النصوص الطويلة).
+- [x] التعامل الآمن مع صناديق الاختيار غير المحددة عبر `$request->boolean('is_completed')`.
+- [x] الحفاظ على نظافة المتحكم `TaskController` وخلوه من منطق التحقق المكرر.
+
+### 4. البيانات التجريبية (Factories & Seeders)
+- [x] إنشاء مصنع المهام `TaskFactory` وتوليد بيانات وهمية واقعية باستخدام Faker.
+- [x] إنشاء بذرة المهام `TaskSeeder` لتعبئة مهام أولية تلقائياً.
+- [x] تسجيل وتجربة `php artisan migrate:fresh --seed` بنجاح تام.
+
+### 5. واجهات العرض (Blade Views & RTL UX)
+- [x] واجهات عربية متجاوبة بالكامل (`dir="rtl"`) مع خط `Noto Kufi Arabic` وتنسيقات Tailwind CSS.
+- [x] صفحة القائمة `index.blade.php` مع بطاقات إحصائية للمهام والتصفح بالصفحات (`paginate(9)`).
+- [x] معالجة حالة القائمة الفارغة عبر `@forelse ... @empty`.
+- [x] حماية النماذج ضد هجمات تزوير الطلبات عبر وسم `@csrf`.
+- [x] تزييف أفعال HTTP في التعديل والحذف عبر `@method('PUT')` و `@method('DELETE')`.
+- [x] إعادة تعبئة الحقول بعد فشل التحقق عبر `old('field')`.
+- [x] إشعار تأكيد الحذف للمستخدم عبر `onsubmit="return confirm(...)"`.
+- [x] رسائل نجاح خضراء تظهر بعد العمليات عبر `session('success')`.
+
+### 6. الاختبارات الآلية (Automated Testing with Pest)
+- [x] كتابة وتنفيذ 6 اختبارات ميزة مخصصة في `tests/Feature/TaskManagementTest.php`.
+- [x] اختبار حماية الزائر، عرض الصفحات الأربع، الإضافة، رسائل الخطأ، التحديث، والحذف.
+- [x] اجتياز 31 اختباراً آلياً بنسبة 100% (101 تأكيد / Assertions) عبر `php artisan test`.
+
+### 7. دورة العمل وإدارة الإصدارات (Git Workflow & AI Transparency)
+- [x] فتح Issue رقم #2 على GitHub لتوثيق ميزة الـ CRUD.
+- [x] إنشاء فرع مستقل `feature/task-management-crud`.
+- [x] رسائل Commit معيارية واضحة.
+- [x] رفع الفرع وفتح Pull Request رقم #3 وربطها بـ `Closes #2`.
+- [x] دمج الـ PR بنجاح إلى `main` وإغلاق الـ Issue.
+- [x] توثيق الاستعانة بالذكاء الاصطناعي في `AI_Log.md` (Entry 02).
+
+---
+
+### النتيجة الإجمالية للمحاضرة الثانية: 100 / 100 ✅
+جميع المتطلبات الهندسية والبرمجية للمحاضرة الثانية مكتملة وتم التحقق منها بنجاح.
+
