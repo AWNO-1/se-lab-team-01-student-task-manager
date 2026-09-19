@@ -1,0 +1,37 @@
+# Local Environment & Secrets
+.env
+.env.backup
+.env.production
+*.key
+*.pem
+*.sqlite-journal
+
+# Dependencies & Build
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE & System Files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Storage & Temporary Files
+/storage/*.key
+/storage/app/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+!/storage/app/.gitignore
+!/storage/framework/cache/.gitignore
+!/storage/framework/sessions/.gitignore
+!/storage/framework/views/.gitignore
+!/storage/logs/.gitignore
