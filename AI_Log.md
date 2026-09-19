@@ -89,3 +89,44 @@ Antigravity AI / Gemini 3.8 Flash
 
 ### Human Review
 قام الطالب بتشغيل الاختبارات عبر `php artisan test`، والتأكد من نجاح كافة الاختبارات (31 اختباراً، 101 تأكيد، وجميع اختبارات TaskManagement الستة) بنسبة نجاح 100%. كما تم التأكد من عمل الترحيل والبذر السليم عبر `php artisan migrate:fresh --seed`.
+
+---
+
+## Entry 03
+
+### Date
+2026-09-19
+
+### Student
+AWMO-1 (فريق العمل الهندسي)
+
+### Tool
+Antigravity AI / Gemini 3.8 Flash
+
+### Purpose
+استشارة الذكاء الاصطناعي في تطبيق مفاهيم البرمجة كائنية التوجه المتقدمة (Classes, Abstract Classes, Interfaces, Traits, Dependency Injection, and Service Container Binding) وفق المعمل الثاني للمهندس ساهر القائد، وتوليد إجابات أكاديمية دقيقة لأسئلة المراجعة العشرين.
+
+### Prompt Summary
+طلبنا صياغة الحلول الهندسية للتمارين العملية الخمسة في PHP 8.4 مع مراعاة أحدث الميزات (Constructor Promotion)، وتطبيق ميزة تصدير التقارير في Laravel باستخدام ربط Service Container في AppServiceProvider، وكتابة اختبار ميزة BDD في Pest يثبت إمكانية استبدال مزود التصدير دون تعديل المتحكم، وصياغة إجابات نموذجية موثوقة لأسئلة المراجعة الشفوية الـ 20.
+
+### AI Suggestions
+1. **التمارين الخمسة:** تنفيذ الفئات والواجهات والسمات للتمارين (Student, Shape, GeneratesReferenceNumber, ReportExporter, PaymentGateway).
+2. **تطبيق Laravel:** إنشاء `ReportExporterInterface`, `AbstractReportExporter`, `CsvReportExporter`, و `JsonReportExporter` مع حقن التبعية في `TaskExportController`.
+3. **الاختبارات:** كتابة اختبارات Pest تتحقق من العقد وتثبت مبدأ Open/Closed عبر تغيير الربط ديناميكياً بـ `app()->bind()`.
+4. **اقتراحات إضافية:** اقتراح استخدام مكتبات تابعة لجهات خارجية مثل `Maatwebsite/Excel` لتصدير ملفات Excel بصيغ xlsx المعقدة.
+
+### Accepted Suggestions
+- قبول كافة حلول التمارين الخمسة واستخدام دوال PHP الأصلية (Native PHP Streams و `fputcsv` و `json_encode`).
+- تطبيق معمارية Service Container Binding في `AppServiceProvider` مع حقن التبعية في المتحكم.
+- كتابة اختبارات Pest الأربعة في `tests/Feature/TaskExportTest.php` والتي تجتاز التحقق بنسبة 100%.
+- اعتماد الإجابات النموذجية لأسئلة المراجعة العشرين في `docs/OOP_LAB_SOLUTIONS_AND_REVIEW.md`.
+
+### Rejected Suggestions
+- **استخدام مكتبة Maatwebsite/Excel الخارجية:** تم الرفض للاعتماد على الكود البرمجي الأصيل الموضح في معمل الأستاذ (Native CSV/JSON) دون تحميل حزم ثقيلة غير مطلوبة.
+
+### Reason for Rejection
+التركيز الأكاديمي على فهم جوهر البرمجة كائنية التوجه وتعدد الأشكال (Polymorphism) وحقن الاعتماديات، وتجنب الاعتماد على حزم خارجية تخفي المنطق البرمجي.
+
+### Human Review
+قام الطالب بتشغيل مشغل التمارين الشامل `php exercises/oop/RunAllExercises.php` واجتياز كافة التمارين الخمسة بدون أي تحذيرات أو أخطاء، ثم تشغيل جناح اختبارات Laravel بالكامل `php artisan test` واجتياز 35 اختباراً بنجاح 100%. كما تمت مراجعة الإجابات النظرية لأسئلة المناقشة.
+
